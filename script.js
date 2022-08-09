@@ -90,33 +90,49 @@ function Playround(computerselection, playerselection) {
 
 }
 
-
-
 function Game() {
-    var playerscore = 0
-    var computescore = 0
-    
-    for (let i = 0; i < 5; i++) {
-        console.log(`Player ${playerscore} VS ${computescore} Computer`)
-        let round = Playround(Getcomputerchoice(), Getplayerchoice())
-        let result = round[0]
-        let score = round[1]
-        console.log(result)
-        if (score == 1) {
-             playerscore++ 
-         } else if (score == 0) {
-             computescore++
+    let playerscore = document.getElementById('playerscore')
+    let computerscore = document.getElementById('computerscore')
+    let playerpoints = 0;
+    let computerpoints = 0;
+    //results
+    const results = document.getElementById('results')
+    //rock button
+    const rock = document.querySelector('#rock');
+    rock.addEventListener('click', function() {
+        
+        const battle = Playround(Getcomputerchoice(), 'Rock')
+        results.textContent = battle[0]
+        if (battle[1] === 1) {
+            playerscore.textContent = playerpoints+=1
+        } else if (battle[1] === 0) {
+            computerscore.textContent = computerpoints+=1
         }
+    });
+    //paper button
+    const paper = document.querySelector('#paper');
+    paper.addEventListener('click', function() {
+        const battle = Playround(Getcomputerchoice(), 'Paper')
+        results.textContent = battle[0]
+        if (battle[1] === 1) {
+            playerscore.textContent = playerpoints+=1
+        } else if (battle[1] === 0) {
+            computerscore.textContent = computerpoints+=1
+        }
+    });
+    //scissor button
+    const scissor = document.querySelector('#scissor');
+    scissor.addEventListener('click', function() {
+        const battle = Playround(Getcomputerchoice(), 'Scissors')
+        results.textContent = battle[0]
+        if (battle[1] === 1) {
+            playerscore.textContent = playerpoints+=1
+        } else if (battle[1] === 0) {
+            computerscore.textContent = computerpoints+=1
+        }
+    });
     
-    }
-    console.log(`Player ${playerscore} VS ${computescore} Computer`)
-    if (playerscore > computescore) {
-        console.log('Congratulations! You Win!')
-        console.log('Thank you for play!')
-    } else {
-        console.log('You lose! Thanks for play!')
-        console.log('Game Over')
-    }
+    
 }
 
 Game()
