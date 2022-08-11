@@ -5,19 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissor</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id = container>
-        <input type="button" id="rock" value="Rock">
-        <input type="button" id="paper" value="Paper">
-        <input type="button" id="scissor" value="Scissor">
-        <!-- <button id="rock" class = "button">Rock</button>
-        <button id="paper" class = "button">Paper</button>
-        <button id="scissor" class = "button">Scissor</button> -->
-        <div id = results></div>
-        <div id = score>
-            <h1 id="playerscore">0</h1><h2>X</h2><h1 id="computerscore">0</h1>
+        <div id="buttons">
+            <input type="image" id="rock" class="image" src="imgs/rock.png">
+            <input type="image" id="paper" class="image" src="imgs/paper.png">
+            <input type="image" id="scissor" class="image" src="imgs/scissors.png">
         </div>
+        
+        <div id = score>
+            <div id="points">
+                <div id="playerchoice"></div>
+                <p id="playerscore" class="neonoff text">012345</p>
+                <p class="neonon text">VS</p>
+                <p id="computerscore" class="neonoff text">012345</p>
+                <div id="computerchoice"></div>
+            </div>
+            <div id = "results" class="neonon text"></div>
+            
+        </div>
+        
         
     </div>
     <script src="script.js"></script>

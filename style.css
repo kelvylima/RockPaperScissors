@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+body {
+    background-color: black;
+    font-family: 'Neonderthaw', cursive;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    /*background-color: aqua;*/
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+    background-color: black;
+}
+
+#results {
+    font-size: 70px;
+    text-align: center;
+}
+
+#score {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    /*background-color: yellow;*/
+    align-items: center;
+}
+
+#points {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.image{
+    height: 100px;
+}
+
+.text {
+    font-size: 90px;
+    font-weight: 500;
+    
+    
+}
+
+
+.neonon {
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+}
+
+.neonoff {
+    color: gray;
+}
+
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px rgb(255, 0, 179),
+        0 0 80px rgb(255, 0, 179),
+        0 0 90px rgb(255, 0, 179),
+        0 0 100px rgb(255, 0, 179),
+        0 0 150px rgb(255, 0, 179);
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+  }
