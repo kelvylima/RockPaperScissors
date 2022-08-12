@@ -150,14 +150,55 @@ function Game() {
 function Gameover(playerscore, computerscore, results) {
     let gameover = ''
     if(playerscore === 5) {
-        results.textContent = 'YOU WIN! CONGRATULATIONS!'
+        results.textContent = ''
         gameover = true
+        Playagain(gameover, 'You win! Congratulations!')
+        
     } else if(computerscore === 5) {
-        results.textContent = 'YOU LOSE! GAME OVER'
+        results.textContent = ''
         gameover = true
+        Playagain(gameover, 'You lose! Game Over!')
     }
+    
+}
+
+function Playagain(gameover, text) {
     if(gameover){
-        let yesbutton = createElement('button')
+        
+        let container = document.getElementById('container')
+        container.innerHTML = ""
+        let para = document.createElement('p')
+        para.classList.add('neonon')
+        para.classList.add('text')
+        para.textContent = text
+        let gameoverdiv = document.createElement('div')
+        gameoverdiv.setAttribute('id', 'gameoverbuttons')
+        container.appendChild(para)
+        container.appendChild(gameoverdiv)
+        
+        let playagaintext = document.createElement('p')
+        playagaintext.classList.add('neonon')
+        playagaintext.classList.add('text')
+        playagaintext.textContent = 'Play again?'
+        let yesbutton = document.createElement('button')
+        yesbutton.classList.add('gameoverbutton')
+        yesbutton.textContent='YES'
+        let nobutton = document.createElement('button')
+        nobutton.classList.add('gameoverbutton')
+        nobutton.textContent='NO'
+        gameoverdiv.appendChild(playagaintext)
+        gameoverdiv.appendChild(yesbutton)
+        gameoverdiv.appendChild(nobutton)
+        
+        //event listner
+        yesbutton.addEventListener('click', () => {
+            document.location.reload()
+        })
+        nobutton.addEventListener('click', () => {
+            let div = document.getElementById('container')
+            div.innerHTML = '<p id = "gameovertext" class = "neonon text">Thank you for playing</p>'
+        })
+        
     }
 }
 
